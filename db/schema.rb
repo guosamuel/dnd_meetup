@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_202210) do
+ActiveRecord::Schema.define(version: 2019_04_12_214507) do
 
   create_table "campaigns", force: :cascade do |t|
     t.boolean "completed"
@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2019_04_12_202210) do
     t.integer "campaign_id"
     t.string "alignment"
     t.string "char_name"
-    t.string "class"
     t.string "race"
     t.string "weapon"
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "klass"
   end
 
   create_table "meetups", force: :cascade do |t|
