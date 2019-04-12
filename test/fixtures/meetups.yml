@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 1
+  location: MyString
+  meet_time: 2019-04-12 16:20:31
+  number_of_hours: 1
+
+two:
+  campaign_id: 1
+  location: MyString
+  meet_time: 2019-04-12 16:20:31
+  number_of_hours: 1

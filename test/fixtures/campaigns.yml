@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  completed: false
+  title: MyString
+  expect_number_of_meetups: 1
+  difficulty: 1
+  max_characters: 1
+
+two:
+  completed: false
+  title: MyString
+  expect_number_of_meetups: 1
+  difficulty: 1
+  max_characters: 1
