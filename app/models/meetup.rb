@@ -2,9 +2,8 @@ class Meetup < ApplicationRecord
   has_many :user_meetups
   belongs_to :campaign
   has_many :characters, through: :campaign
-<<<<<<< HEAD
+
   has_many :users, through: :user_meetups
-=======
 
   validates :campaign_id, presence: true
   validates :location, presence: true
@@ -74,5 +73,5 @@ class Meetup < ApplicationRecord
     end
   end
 
->>>>>>> 843ea2e4d7a0fc155cd746196780b92f8e67ff9b
+
 end
