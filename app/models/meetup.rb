@@ -22,7 +22,7 @@ class Meetup < ApplicationRecord
       year = self.meet_time.year
       day = self.meet_time.day
       month = month_conversion
-      "#{month} #{day}, #{year} at #{civilian_hour}:#{self.meet_time.min} #{am_or_pm}"
+      "#{month} #{day}, #{year} at #{civilian_hour}:#{correct_minutes} #{am_or_pm}"
     end
   end
 
@@ -33,6 +33,14 @@ class Meetup < ApplicationRecord
       self.meet_time.hour
     else
       self.meet_time.hour - 12
+    end
+  end
+
+  def correct_minutes
+    if self.meet_time.min == 0
+      self.meet_time.min.to_s + self.meet_time.min.to_s
+    else
+      self.meet_time.min
     end
   end
 
