@@ -1,0 +1,12 @@
+<h1>New Meetup</h1>
+<%= form_for(@meetup) do |f| %>
+  <%= f.label :campaign_id, "Campaign"%>
+  <%= f.collection_select :campaign_id, Campaign.all, :id, :title %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :meet_time, "Meeting Time" %>
+  <%= f.datetime_local_field :meet_time %>
+  <%= f.label :number_of_hours, "Number of Hours" %>
+  <%= f.number_field :number_of_hours %>
+  <%= f.submit %>
+<% end %>

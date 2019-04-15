@@ -1,0 +1,17 @@
+<h1><%= @user.first_name %> <%= @user.last_name %> </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <img src="../../assets/images/dwarf.png" alt="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <ul>
+        <li>Email: <%= @user.email_address %></li>
+        <li>Start Date: <%= @user.start_date %></li>
+      </ul>
+      <button type="button"><%= link_to "Edit Info", edit_user_path(@user) %></button>
+    </div>
+  </div>
+</div>

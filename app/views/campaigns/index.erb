@@ -1,0 +1,34 @@
+<h1>All Campaigns</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <form>
+      <div class="col-xs-6">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search&hellip;">
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">Go</button>
+              </span>
+          </div>
+      </div>
+      </form>
+<hr>
+    </div>
+    <div class="col-xs-6">
+      <button type="button" class="btn btn-primary"><%= link_to "Create New", new_campaign_path %></button>
+    </div>
+  </div>
+    <div class="row">
+        <% @campaigns.each do |campaign| %>
+        <div class="col-md-4">
+          <p><%= link_to campaign.title, campaign_path(campaign) %></p>
+          <ul>
+            <li>Title: <%= campaign.title %></li>
+            <li>Expected Number of Meetups: <%= campaign.expect_number_of_meetups %></li>
+            <li>Difficulty <%= campaign.difficulty %></li>
+            <li>Max Number of Characters: <%= campaign.max_number_of_characters %></li>
+          </ul>
+        </div>
+        <% end %>
+    </div>
+</div>

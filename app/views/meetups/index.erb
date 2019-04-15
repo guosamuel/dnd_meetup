@@ -1,0 +1,35 @@
+<h1>All Meetups</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <form>
+      <div class="col-xs-6">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search&hellip;">
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">Go</button>
+              </span>
+          </div>
+      </div>
+      </form>
+<hr>
+    </div>
+    <div class="col-xs-6">
+      <button type="button" class="btn btn-primary"><%= link_to "Create New", new_meetup_path %></button>
+    </div>
+  </div>
+    <div class="row">
+        <% @meetups.each do |meetup| %>
+        <div class="col-md-4">
+          <p><%= link_to meetup.location, meetup_path(meetup) %></p>
+          <ul>
+            <li>Campaign: <%= meetup.campaign.title %></li>
+            <li>Meet Time: <%= meetup.meet_time %></li>
+            <li>Expected Duration <%= meetup.number_of_hours %> hours</li>
+          </ul>
+        </div>
+        <% end %>
+    </div>
+</div>
