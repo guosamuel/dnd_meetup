@@ -31,6 +31,7 @@ class User < ApplicationRecord
     end
   end
 
+# Helper method
   def month_conversion
     month_number = self.start_date.to_date.month
     if month_number == 1
@@ -108,5 +109,5 @@ class User < ApplicationRecord
     end
     campaign_titles
   end
-  
+
 end

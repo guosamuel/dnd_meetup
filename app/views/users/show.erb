@@ -1,17 +1,43 @@
-<h1><%= @user.first_name %> <%= @user.last_name %> </h1>
+<h1><%= @user.full_name %> </h1>
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <img src="../../assets/images/dwarf.png" alt="" />
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <ul>
         <li>Email: <%= @user.email_address %></li>
-        <li>Start Date: <%= @user.start_date %></li>
+        <li>Start Date: <%= @user.format_start_date %></li>
       </ul>
       <button type="button"><%= link_to "Edit Info", edit_user_path(@user) %></button>
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Characters</h4>
+    </div>
+    <div class="col-md-6">
+      <h4>Campaigns</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+        <% @user.get_list_of_characters.each do |character| %>
+        <li><%= link_to character, character_path(Character.find_by(char_name: character)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        <% @user.get_list_of_campaign_titles.each do |title| %>
+        <li><%= title %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

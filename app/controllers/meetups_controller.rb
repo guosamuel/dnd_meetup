@@ -15,6 +15,7 @@ class MeetupsController < ApplicationController
 
   def create
     @meetup = Meetup.new(meetup_params(:campaign_id, :location, :meet_time, :number_of_hours))
+    @meetup.save
     redirect_to meetup_path(@meetup)
   end
 

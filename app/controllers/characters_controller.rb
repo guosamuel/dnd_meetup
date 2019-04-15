@@ -23,6 +23,7 @@ class CharactersController < ApplicationController
 
   def update
     @character.update(character_params(:weapon, :level))
+    redirect_to character_path(@character)
   end
 
   private

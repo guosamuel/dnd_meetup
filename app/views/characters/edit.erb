@@ -1,0 +1,9 @@
+<h3>Edit <%= @character.char_name %></h3>
+
+<%= form_for(@character) do |f| %>
+  <%= f.label :weapon, "Weapon" %>
+  <%= f.text_field :weapon %>
+  <%= f.label :level, "Level" %>
+  <%= f.number_field :level %>
+  <%= f.submit %>
+<% end %>

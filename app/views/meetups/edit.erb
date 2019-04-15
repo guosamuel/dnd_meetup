@@ -1,0 +1,9 @@
+<%= form_for(@meetup) do |f| %>
+  <%= f.label :location, "Location" %>
+  <%= f.text_field :location %>
+  <%= f.label :meet_time, "Meeting Time" %>
+  <%= f.datetime_local_field :meet_time %>
+  <%= f.label :number_of_hours, "No. of Hours" %>
+  <%= f.number_field :number_of_hours %>
+  <%= f.submit %>
+<% end %>
