@@ -27,12 +27,12 @@
         <!-- Collection of nav links and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Profile</a></li>
+                <li class="active"><a href="<%=user_path(session[:user]["id"])%>">Profile</a></li>
                 <li><a href="<%=meetups_path%>">Meetups</a></li>
                 <li><a href="<%=campaigns_path%>">Campaigns</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
+                <li><a href="<%=login_path%>">Login</a></li>
             </ul>
         </div>
     </div>

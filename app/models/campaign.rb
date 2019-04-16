@@ -2,16 +2,17 @@ class Campaign < ApplicationRecord
   has_many :meetups
   has_many :characters
 
-  validates :completed, presence: true
-  validates :title, presence: true
-  validates :expect_number_of_meetups, numericality: { greater_than_or_equal_to: 0, only_integer: true }
-  validates :difficulty, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 10 }
-  validates :max_number_of_characters, numericality: true
-  validates :max_number_of_characters, numericality: { only_integer: true }
 
-  validate :campaign_character_count
-  validate :has_at_least_one_DM
-  validate :has_at_least_one_character
+  # validates :completed, presence: true
+  # validates :title, presence: true
+  # validates :expect_number_of_meetups, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  # validates :difficulty, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 10 }
+  # validates :max_number_of_characters, numericality: true
+  # validates :max_number_of_characters, numericality: { only_integer: true }
+  #
+  # validate :campaign_character_count
+  # validate :has_at_least_one_DM
+  # validate :has_at_least_one_character
 
   def campaign_character_count
     if self.max_number_of_characters

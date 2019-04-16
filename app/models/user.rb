@@ -1,13 +1,17 @@
 class User < ApplicationRecord
-  has_secure_password 
+  # has_secure_password
   has_many :user_meetups
   has_many :meetups, through: :user_meetups, dependent: :destroy
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :user_name, presence: true
-  validates :email_address, presence: true, if: :has_at_and_period?
-  validates :user_name, uniqueness: { case_sensitive: false }
-  validates :email_address, uniqueness: { case_sensitive: false }
+  has_many :characters
+
+  #not really on board?
+  has_many :campaigns, through: :meetups
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :user_name, presence: true
+  # validates :email_address, presence: true, if: :has_at_and_period?
+  # validates :user_name, uniqueness: { case_sensitive: false }
+  # validates :email_address, uniqueness: { case_sensitive: false }
 
   def has_at_and_period?
     self.email_address.include?("@") && self.email_address.include?(".")
@@ -64,17 +68,23 @@ class User < ApplicationRecord
 
   #method to get list of characters
   def get_list_of_characters
-    character_list = []
-    Character.all.each do |character|
-      character.campaign.meetups.each do |meetup|
-        meetup.users.each do |user|
-          if user.id == self.id
-            character_list << character.char_name
-          end
-        end
-      end
+    # character_list = []
+    # Character.all.each do |character|
+    #   character.campaign.meetups.each do |meetup|
+    #     meetup.users.each do |user|
+    #       if user.id == self.id
+    #         byebug
+    #         character_list << character.char_name
+    #       else
+    #         puts "I'm here"
+    #       end
+    #     end
+    #   end
+    # end
+    # character_list.uniq
+    self.characters.map do |character|
+      character.char_name
     end
-    character_list
   end
 
   # #method to get list of campaigns_ids
@@ -98,17 +108,20 @@ class User < ApplicationRecord
   # end
 
   def get_list_of_campaign_titles
-    campaign_titles = []
-    Campaign.all.each do |campaign|
-      campaign.meetups.each do |meetup|
-        meetup.users.each do |user|
-          if user.id == self.id
-            campaign_titles << campaign.title
-          end
-        end
-      end
+    # campaign_titles = []
+    # Campaign.all.each do |campaign|
+    #   campaign.meetups.each do |meetup|
+    #     meetup.users.each do |user|
+    #       if user.id == self.id
+    #         campaign_titles << campaign.title
+    #       end
+    #     end
+    #   end
+    # end
+    # campaign_titles.uniq
+    self.campaigns.map do |campaign|
+      campaign.title
     end
-    campaign_titles
   end
 
 end

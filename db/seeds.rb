@@ -14,7 +14,7 @@ end
 
 
 5.times do
-  Campaign.create(completed: false, title: Faker::Lorem.words(2), expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(1..7))
+  Campaign.create(completed: false, title: Faker::Lorem.words(2).concat, expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(2..7))
 end
 
 
@@ -32,5 +32,5 @@ end
 
 
 50.times do
-  Character.create(campaign_id: rand(Campaign.first.id..Campaign.last.id), alignment: ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "Neutral Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"].sample, char_name: Faker::Games::WorldOfWarcraft.hero, klass: ["Bard", "Barbarian", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rouge", "Sorcerer", "Warlock", "Wizard"].sample, race: ["Gnome", "Halfling", "Dwarf", "Elf", "Half-Elf", "Teifling", "Human", "Dragonborn", "Half-Orc"].sample, weapon: Faker::Games::Zelda.item, level: rand(1..10))
+  Character.create(campaign_id: rand(Campaign.first.id..Campaign.last.id), alignment: ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "Neutral Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"].sample, char_name: Faker::Games::WorldOfWarcraft.hero, klass: ["Bard", "Barbarian", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rouge", "Sorcerer", "Warlock", "Wizard"].sample, race: ["Gnome", "Halfling", "Dwarf", "Elf", "Half-Elf", "Teifling", "Human", "Dragonborn", "Half-Orc"].sample, weapon: Faker::Games::Zelda.item, level: rand(1..10), user_id: rand(User.first.id..User.last.id))
 end
