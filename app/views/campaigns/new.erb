@@ -1,0 +1,11 @@
+<h1>Start A New Campaign</h1>
+<%= form_for(@campaign) do |f| %>
+  <%= f.hidden_field :completed, value: false %>
+  <%= f.label :title, "Campaign Title" %>
+  <%= f.text_field :title %>
+  <%= f.label :expect_number_of_meetups, "Expected Number of Meetups" %>
+  <%= f.number_field :expect_number_of_meetups %>
+  <%= f.label :max_number_of_characters, "Max Number of Characters" %>
+  <%= f.number_field :max_number_of_characters %>
+  <%= f.submit %>
+<% end %>

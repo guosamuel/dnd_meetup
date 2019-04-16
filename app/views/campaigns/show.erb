@@ -6,3 +6,6 @@
   <li>Difficulty: <%= @campaign.difficulty %></li>
   <li>Max No. of Characters <%= @campaign.max_number_of_characters %></li>
 </ul>
+
+<%= link_to "Edit", edit_campaign_path(@campaign) %>
+<%= link_to "Delete" destroy_campaign_path(@campaign) %>

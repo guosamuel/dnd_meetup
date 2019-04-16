@@ -14,7 +14,8 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params(:title, :expect_number_of_meetups, :difficulty, :max_number_of_characters))
-    redirect_to campaign_path(@campaign)
+    @campaign.save
+    redirect_to new_meetup_path
   end
 
   def edit
