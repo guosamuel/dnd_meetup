@@ -6,7 +6,10 @@ class MeetupsController < ApplicationController
   end
 
   def show
-
+    flash[:user_meetup] = {
+      meetup_id: Meetup.find(params[:id]).id,
+      user_id: session[:user]["id"]
+     }
   end
 
   def new

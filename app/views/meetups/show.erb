@@ -5,5 +5,12 @@
   <li>Meet Time: <%= @meetup.format_meet_time %></li>
   <li>No. of Hours <%= @meetup.number_of_hours %></li>
 </ul>
-
+<br />
+<h5>Users</h5>
+<ul>
+  <% @meetup.users.each do |user| %>
+  <li><%= user.first_name %></li>
+  <% end %>
+</ul>
 <button class="btn"><%= link_to "Edit", edit_meetup_path %></button>
+<%= button_to "RSVP", "/user_meetups", method: "post" %>

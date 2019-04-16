@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_214507) do
+ActiveRecord::Schema.define(version: 2019_04_16_183427) do
 
   create_table "campaigns", force: :cascade do |t|
     t.boolean "completed"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_214507) do
     t.datetime "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

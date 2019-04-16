@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password 
   has_many :user_meetups
   has_many :meetups, through: :user_meetups, dependent: :destroy
   validates :first_name, presence: true
