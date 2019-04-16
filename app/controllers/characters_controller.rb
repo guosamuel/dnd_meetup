@@ -10,10 +10,13 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @camp_id = UserMeetup.last.meetup.campaign.id
+    byebug
   end
 
   def create
     @character = Character.new(character_params(:campaign_id, :alignment, :char_name, :race, :weapon, :level, :klass))
+    @character.save
     redirect_to character_path(@character)
   end
 

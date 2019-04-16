@@ -1,0 +1,16 @@
+<h3>Create a Character</h3>
+<%= form_for(@character) do |f| %>
+<%= f.hidden_field :campaign_id, @camp_id %>
+<%= f.label :alignment, "Alignment" %>
+<%= f.text_field :alignment %>
+<%= f.label :race, "Race" %>
+<%= f.text_field :race %>
+<%= f.label :weapon %>
+<%= f.text_field :weapon %>
+<%= f.label :level, "Level" %>
+<%= f.number_field :level %>
+<%= f.label :klass, "Class" %>
+<%= f.text_field :klass %>
+<%= f.hidden_field :user_id, session[:user]["id"] %>
+<%= f.submit %>
+<% end %>

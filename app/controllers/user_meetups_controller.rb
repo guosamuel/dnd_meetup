@@ -3,7 +3,7 @@ class UserMeetupsController < ApplicationController
     # byebug
     @rsvp = UserMeetup.new(user_id: session[:user]["id"], meetup_id: flash["user_meetup"]["meetup_id"])
     @rsvp.save
-    redirect_to meetups_path
+    redirect_to new_character_path
   end
 
 end
