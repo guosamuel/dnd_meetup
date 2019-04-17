@@ -1,6 +1,8 @@
 <h3>Create a Character</h3>
 <%= form_for(@character) do |f| %>
-<%= f.hidden_field :campaign_id, @camp_id %>
+<%= f.hidden_field :campaign_id, :value => @campaign %>
+<%= f.label :char_name, "Character Name" %>
+<%= f.text_field :char_name %>
 <%= f.label :alignment, "Alignment" %>
 <%= f.select :alignment, @alignments %>
 <%= f.label :race, "Race" %>
@@ -11,6 +13,6 @@
 <%= f.number_field :level %>
 <%= f.label :klass, "Class" %>
 <%= f.select :klass, @klasses %>
-<%= f.hidden_field :user_id, session[:user]["id"] %>
+<%= f.hidden_field :user_id, :value => session[:user]["id"] %>
 <%= f.submit %>
 <% end %>
