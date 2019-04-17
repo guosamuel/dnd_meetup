@@ -10,11 +10,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
-    @camp_id = UserMeetup.last.meetup.campaign.id
+    @campaign = UserMeetup.last.meetup.campaign.id
     # byebug
     @alignments = Character.alignment_list
     @races = Character.race_list
     @klasses = Character.klass_list
+    # flash[:meetuptransfer2] = flash[:meetuptransfer]
   end
 
   def create
