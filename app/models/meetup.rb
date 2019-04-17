@@ -12,7 +12,7 @@ class Meetup < ApplicationRecord
   validate :within_24_hours
 
   def within_24_hours
-    if self.number_of_hours <= 0 || self.number_of_hours > 24
+    if self.number_of_hours && (self.number_of_hours <= 0 || self.number_of_hours > 24)
       errors.add(:number_of_hours, "Hey, there's only 24 hours in a day. Please choose a number between 0 and 24.")
     end
   end

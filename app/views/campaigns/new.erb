@@ -1,5 +1,6 @@
 <h1>Start A New Campaign</h1>
 <p>Note: Since you are starting a new compaign, you shall be Dungeon Master by default.</p>
+
 <%= form_for(@campaign) do |f| %>
   <%= f.hidden_field :completed, value: false %>
   <%= f.label :title, "Campaign Title" %>
@@ -11,4 +12,10 @@
   <%= f.label :difficulty %>
   <%= f.number_field :difficulty %>
   <%= f.submit %>
+<% end %>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+  <span style="color: red;"><%= error %></span> &nbsp
+  <% end %>
 <% end %>

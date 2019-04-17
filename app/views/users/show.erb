@@ -41,4 +41,13 @@
       </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Meetups</h4>
+      <ul>
+        <% @user.meetups.each do |mu| %>
+        <li><%= link_to mu.format_meet_time, meetup_path(mu) %> - <%= mu.campaign.title %></li>
+        <% end %>
+      </ul>
+    </div>
 </div>

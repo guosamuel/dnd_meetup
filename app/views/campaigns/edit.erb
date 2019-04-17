@@ -1,0 +1,8 @@
+<h1>Editing the Campaign</h1>
+
+<%= form_for(@campaign) do |f| %>
+  <%= f.label :completed, "Completed?" %>
+  <%= f.select :completed, @complete_array %><br><br>
+
+  <%= f.submit "Submit" %>
+<% end %>

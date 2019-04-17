@@ -12,10 +12,13 @@ class User < ApplicationRecord
   validates :email_address, presence: true, if: :has_at_and_period?
   validates :user_name, uniqueness: { case_sensitive: false }
 
-  # validates :email_address, uniqueness: { case_sensitive: false }                   #uniqueness can take "scope" as an arg
+  validates :email_address, uniqueness: { case_sensitive: false }
+  validate :has_at_and_period?              
 
   def has_at_and_period?
-    self.email_address.include?("@") && self.email_address.include?(".")
+    unless self.email_address.include?("@") && self.email_address.include?(".")
+      errors.add(:email_address, "This is not a valid email address.")
+    end
   end
 
   # def get_all_meetups

@@ -20,8 +20,12 @@ class MeetupsController < ApplicationController
 
   def create
     @meetup = Meetup.new(meetup_params(:campaign_id, :location, :meet_time, :number_of_hours))
-    @meetup.save
-    redirect_to meetup_path(@meetup)
+    if @meetup.save
+      redirect_to meetup_path(@meetup)
+    else
+      flash[:errors] = @meetup.errors.full_messages
+      redirect_to new_meetup_path
+    end
   end
 
   def edit
@@ -29,8 +33,12 @@ class MeetupsController < ApplicationController
   end
 
   def update
-    @meetup.update(:location, :meet_time, :number_of_hours)
-    redirect_to meetup_path(@meetup)
+    if @meetup.update(meetup_params(:location, :meet_time, :number_of_hours))
+      redirect_to meetup_path(@meetup)
+    else
+      flash[:errors] = @meetup.errors.full_messages
+      redirect_to edit_meetup_path(@meetup)
+    end
   end
 
   def destroy

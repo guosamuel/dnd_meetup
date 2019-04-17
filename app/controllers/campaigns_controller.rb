@@ -21,17 +21,17 @@ class CampaignsController < ApplicationController
       flash[:campaign_title] = @campaign.title
       redirect_to new_meetup_path
     else
-      byebug
-      redirect_to campaigns_path
+      flash[:errors] = @campaign.errors.full_messages
+      redirect_to new_campaign_path
     end
   end
 
   def edit
-
+    @complete_array = [true, false]
   end
 
   def update
-    @campaign.update(:expect_number_of_meetups, :difficulty, :max_number_of_characters)
+    @campaign.update(campaign_params(:completed))
     redirect_to campaign_path(@campaign)
   end
 
