@@ -10,7 +10,11 @@ class UserMeetupsController < ApplicationController
       flash[:errors] = "You already RSVP'd to this meetup!"
       redirect_to meetups_path
     end
-
   end
 
+  def destroy
+    @rsvp = UserMeetup.find_by(user_id: current_user.id, meetup_id: flash["user_meetup"]["meetup_id"])
+    @rsvp.destroy
+    redirect_to user_path(current_user)
+  end
 end

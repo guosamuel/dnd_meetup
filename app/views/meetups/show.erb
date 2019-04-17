@@ -14,3 +14,6 @@
 </ul>
 <button class="btn"><%= link_to "Edit", edit_meetup_path %></button>
 <%= button_to "RSVP", "/user_meetups", method: "post" %>
+<% if @rsvp %>
+  <%= button_to "Remove RSVP", "/user_meetups/#{@rsvp.id}", method: "delete" %>
+<% end %>

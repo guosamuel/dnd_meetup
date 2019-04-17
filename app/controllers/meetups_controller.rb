@@ -9,8 +9,14 @@ class MeetupsController < ApplicationController
   def show
     flash[:user_meetup] = {
       meetup_id: Meetup.find(params[:id]).id,
-      user_id: session[:user]["id"]
+      user_id: current_user.id
      }
+    # @rsvp = UserMeetup.where(user_id: current_user.id && meetup_id: @meetup.id)
+    # byebug
+    if UserMeetup.where("user_id = ? AND meetup_id = ?", "#{current_user.id}", "#{@meetup.id}" )[0]
+      @rsvp = UserMeetup.where("user_id = ? AND meetup_id = ?", "#{current_user.id}", "#{@meetup.id}" )[0]
+    end
+    # byebug
     flash[:meetup] = Meetup.find(params[:id])
   end
 
