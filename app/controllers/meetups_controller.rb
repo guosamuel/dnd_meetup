@@ -2,7 +2,8 @@ class MeetupsController < ApplicationController
   before_action :find_meetup, only: [:show, :edit, :update, :destroy]
 
   def index
-    @meetups = Meetup.all
+    # @meetups = Meetup.all
+    @meetups = Meetup.search(params[:term])
   end
 
   def show

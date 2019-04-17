@@ -28,8 +28,8 @@
   <div class="row">
     <div class="col-md-6">
       <ul>
-        <% @user.get_list_of_characters.each do |character| %>
-        <li><%= link_to character, character_path(Character.find_by(char_name: character)) %></li>
+        <% @user.characters.each do |character| %>
+        <li><%= link_to character.char_name, character_path(Character.find(character.id)) %></li>
         <% end %>
       </ul>
     </div>

@@ -15,7 +15,15 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params(:title, :expect_number_of_meetups, :difficulty, :max_number_of_characters))
     @campaign.save
-    redirect_to new_meetup_path
+    if @campaign.valid?
+      Character.create(campaign_id: @campaign.id, user_id: current_user.id, char_name: "Dungeon Master")
+      flash[:campaign] = @campaign.id
+      flash[:campaign_title] = @campaign.title
+      redirect_to new_meetup_path
+    else
+      byebug
+      redirect_to campaigns_path
+    end
   end
 
   def edit

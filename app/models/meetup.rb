@@ -4,12 +4,12 @@ class Meetup < ApplicationRecord
   has_many :characters, through: :campaign
 
   has_many :users, through: :user_meetups
-  #
-  # validates :campaign_id, presence: true
-  # validates :location, presence: true
-  # validates :number_of_hours, numericality: true
-  #
-  # validate :within_24_hours
+
+  validates :campaign_id, presence: true
+  validates :location, presence: true
+  validates :number_of_hours, numericality: true
+
+  validate :within_24_hours
 
   def within_24_hours
     if self.number_of_hours <= 0 || self.number_of_hours > 24
@@ -81,5 +81,12 @@ class Meetup < ApplicationRecord
     end
   end
 
+  def self.search(term)
+    if term
+      where('location LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
 
 end

@@ -13,6 +13,6 @@
 <%= f.number_field :level %>
 <%= f.label :klass, "Class" %>
 <%= f.select :klass, @klasses %>
-<%= f.hidden_field :user_id, :value => session[:user]["id"] %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
 <%= f.submit %>
 <% end %>

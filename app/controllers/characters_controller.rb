@@ -19,10 +19,15 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new(character_params(:campaign_id, :alignment, :char_name, :race, :weapon, :level, :klass))
+    flash[:meetup2] = flash[:meetup]
+    @character = Character.new(character_params(:campaign_id, :alignment, :char_name, :race, :weapon, :level, :klass, :user_id))
     @character.save
-    redirect_to character_path(@character)
-
+    if @character.valid?
+      redirect_to character_path(@character)
+    else
+      flash[:errors] = @character.errors.full_messages
+      redirect_to meetups_path
+    end
   end
 
   def edit

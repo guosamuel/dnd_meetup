@@ -6,7 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+places = [
+  "Manhattan",
+  "Brooklyn",
+  "Queens",
+  "Bronx",
+  "Staten Island",
+  "New Jersey"
+]
 
+titles = [
+  "Above Kord's Jail",
+"The Rakshasa Below the Circus",
+"The Defeat of The Chaos Scar",
+"Pelor's Sticky Demonspawn",
+"Above the Vile Circus",
+"The Legend of Vecna",
+"The Spirit Fellowship",
+"Through Erathis's Underground",
+"The Slave Within the Necropolis",
+"The Vengeful Follower Silver",
+"The Murder of Bane",
+"The Plagued Outlaw Riddles",
+"The Outlaw Beyond the Fearful Manor",
+"Corellon's Wealthy Warrior",
+"The Altar from Beyond",
+"The Promise from Above",
+"Bane's Traveler",
+"The Scepter of Ioun",
+"The Legend of Corellon",
+"The Order of Ogrefist Hills"
+]
 20.times do
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, user_name: Faker::Internet.username, email_address: Faker::Internet.email, start_date: Faker::Time.backward(rand(10000..15000), :evening))
 end
@@ -14,13 +44,13 @@ end
 
 
 5.times do
-  Campaign.create(completed: false, title: Faker::Lorem.words(2).join(" "), expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(2..7))
+  Campaign.create(completed: false, title: titles.sample, expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(2..7))
 end
 
 
 
 10.times do
-  Meetup.create(campaign_id: rand(Campaign.first.id..Campaign.last.id), location: Faker::Address.street_address, meet_time: Faker::Time.forward(rand(30..60), :evening), number_of_hours: rand(4..10))
+  Meetup.create(campaign_id: rand(Campaign.first.id..Campaign.last.id), location: places.sample, meet_time: Faker::Time.forward(rand(30..60), :evening), number_of_hours: rand(4..10))
 end
 
 

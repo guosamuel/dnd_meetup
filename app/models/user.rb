@@ -5,13 +5,14 @@ class User < ApplicationRecord
   has_many :characters
 
   #not really on board?
-  has_many :campaigns, through: :meetups
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :user_name, presence: true
-  # validates :email_address, presence: true, if: :has_at_and_period?
-  # validates :user_name, uniqueness: { case_sensitive: false }
-  # validates :email_address, uniqueness: { case_sensitive: false }
+  has_many :campaigns, through: :characters
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :user_name, presence: true
+  validates :email_address, presence: true, if: :has_at_and_period?
+  validates :user_name, uniqueness: { case_sensitive: false }
+
+  # validates :email_address, uniqueness: { case_sensitive: false }                   #uniqueness can take "scope" as an arg
 
   def has_at_and_period?
     self.email_address.include?("@") && self.email_address.include?(".")
