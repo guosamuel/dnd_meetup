@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :user_name, uniqueness: { case_sensitive: false }
 
   validates :email_address, uniqueness: { case_sensitive: false }
-  validate :has_at_and_period?              
+  validate :has_at_and_period?
 
   def has_at_and_period?
     unless self.email_address.include?("@") && self.email_address.include?(".")
