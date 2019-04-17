@@ -8,13 +8,13 @@
 require 'faker'
 
 20.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email_address: Faker::Internet.email, start_date: Faker::Time.backward(rand(10000..15000), :evening))
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, user_name: Faker::Internet.username, email_address: Faker::Internet.email, start_date: Faker::Time.backward(rand(10000..15000), :evening))
 end
 
 
 
 5.times do
-  Campaign.create(completed: false, title: Faker::Lorem.words(2).concat, expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(2..7))
+  Campaign.create(completed: false, title: Faker::Lorem.words(2).join(" "), expect_number_of_meetups: rand(1..10), difficulty: rand(1..10), max_number_of_characters: rand(2..7))
 end
 
 

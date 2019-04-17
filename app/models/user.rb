@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # has_secure_password
+  has_secure_password
   has_many :user_meetups
   has_many :meetups, through: :user_meetups, dependent: :destroy
   has_many :characters

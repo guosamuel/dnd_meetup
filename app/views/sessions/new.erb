@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+<h4><%= flash[:notice] %></h4>
+
+<%= form_tag(login_path) do %>
+  <%= label_tag :user_name %>
+  <%= text_field_tag :user_name %>
+  <%= label_tag :password %>
+  <%= text_field_tag :password %>
+
+  <%= submit_tag 'Login' %>
+<% end %>
+<br />
+<%= button_to "Sign Up", new_user_path, method: "get" %>

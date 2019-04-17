@@ -12,6 +12,7 @@
         <li>Start Date: <%= @user.format_start_date %></li>
       </ul>
       <button type="button"><%= link_to "Edit Info", edit_user_path(@user) %></button>
+      <%= button_to "Logout", logout_path, method: "delete" %>
     </div>
   </div>
   <br />
