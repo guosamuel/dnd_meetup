@@ -1,14 +1,24 @@
-<h1>Login</h1>
 
-<h4><%= flash[:notice] %></h4>
+<div class="row">
+  <div class="col-xs-6">
+    <h1 class="login-heading">Login</h1>
 
-<%= form_tag(login_path) do %>
-  <%= label_tag :user_name %>
-  <%= text_field_tag :user_name %>
-  <%= label_tag :password %>
-  <%= text_field_tag :password %>
+    <h4><%= flash[:notice] %></h4>
 
-  <%= submit_tag 'Login' %>
-<% end %>
-<br />
-<%= button_to "Sign Up", new_user_path, method: "get" %>
+    <%= form_tag(login_path) do %>
+      <%= label_tag :user_name, nil, class: "log-label" %>
+      <%= text_field_tag :user_name, nil, class: "input-group" %>
+      <%= label_tag :password, nil, class: "log-label" %>
+      <%= password_field_tag :password, nil, class: "input-group" %>
+
+      <%= submit_tag 'Login', class: "btn btn-secondary login-btn" %>
+    <% end %>
+    <br />
+
+    <h5 class="login-heading">or</h5>
+    <%= button_to "Sign Up", new_user_path, method: "get", class: "btn btn-secondary"%>
+  </div>
+  <div class="col-xs-6">
+    
+  </div>
+</div>

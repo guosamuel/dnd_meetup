@@ -6,19 +6,15 @@
   <% end %>
 <% end %>
 
-<%= form_for(@meetup) do |f| %>
-  <%= f.label :campaign_id, "Campaign"%>
+<%= bootstrap_form_for(@meetup) do |f| %>
   <% if flash[:campaign] %>
-    <%= f.text_field :campaign_id, :readonly => true, value: flash[:campaign_title]%>
+    <%= f.text_field :campaign_id, :readonly => true, value: flash[:campaign_title], label: "Campaign", class: "form-control"%>
     <%= f.hidden_field :campaign_id, value: flash[:campaign] %>
   <% else %>
     <%= f.collection_select :campaign_id, Campaign.all, :id, :title %>
   <% end %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :meet_time, "Meeting Time" %>
-  <%= f.datetime_local_field :meet_time %>
-  <%= f.label :number_of_hours, "Number of Hours" %>
-  <%= f.number_field :number_of_hours %>
+  <%= f.text_field :location, class: "form-control" %>
+  <%= f.datetime_local_field :meet_time, class: "form-control" %>
+  <%= f.number_field :number_of_hours, class: "form-control" %>
   <%= f.submit %>
 <% end %>

@@ -1,30 +1,33 @@
-<h1>All Meetups</h1>
-
+<h1 class="heading-1">Meetups</h1>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-12">
       <%= form_tag(meetups_path, method: :get) do %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag 'Search', name: nil %>
+      <%= text_field_tag :term, params[:term]%>
+      <%= submit_tag 'Search', name: nil, class: "my-btn btn-secondary"%>
       <% end %>
       <hr>
     </div>
     &nbsp
     <div class="col-xs-6">
-      <%= button_to "New Meetup", new_meetup_path, method: :get %>
+      <%= button_to "New Meetup", new_meetup_path, method: :get, class: "my-btn btn-secondary" %>
     </div>
   </div>
   <h4 style="color: red;"><%=flash[:errors]%></h4>
     <div class="row">
         <% @meetups.each do |meetup| %>
         <div class="col-md-4">
-          <p><%= link_to meetup.location, meetup_path(meetup) %></p>
-          <ul>
-            <li>Campaign: <%= meetup.campaign.title %></li>
-            <li>Meet Time: <%= meetup.format_meet_time %></li>
-            <li>Expected Duration <%= meetup.number_of_hours %> hours</li>
-          </ul>
+          <div class="meetup-card">
+
+
+            <p class="heading-p"><%= link_to meetup.location, meetup_path(meetup) %></p>
+            <ul>
+              <li>Campaign: <%= meetup.campaign.title %></li>
+              <li>Meet Time: <%= meetup.format_meet_time %></li>
+              <li>Expected Duration <%= meetup.number_of_hours %> hours</li>
+            </ul>
+          </div>
         </div>
         <% end %>
     </div>

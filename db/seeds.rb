@@ -12,7 +12,8 @@ places = [
   "Queens",
   "Bronx",
   "Staten Island",
-  "New Jersey"
+  "Jersey City",
+  "Hoboken"
 ]
 
 titles = [

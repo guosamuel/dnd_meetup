@@ -1,17 +1,11 @@
 <h3>Create a Character</h3>
-<%= form_for(@character) do |f| %>
+<%= bootstrap_form_for(@character) do |f| %>
 <%= f.hidden_field :campaign_id, :value => @campaign %>
-<%= f.label :char_name, "Character Name" %>
 <%= f.text_field :char_name %>
-<%= f.label :alignment, "Alignment" %>
 <%= f.select :alignment, @alignments %>
-<%= f.label :race, "Race" %>
 <%= f.select :race, @races %>
-<%= f.label :weapon %>
 <%= f.text_field :weapon %>
-<%= f.label :level, "Level" %>
-<%= f.number_field :level %>
-<%= f.label :klass, "Class" %>
+<%= f.number_field :level%>
 <%= f.select :klass, @klasses %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
 <%= f.submit %>

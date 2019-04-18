@@ -1,39 +1,41 @@
-<h1><%= @user.full_name %> </h1>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <img src="../../assets/images/dwarf.png" alt="" />
+    <div class="col-md-6" id="user-img-col">
+      <div class="img-box">
+        <img src="<%=asset_path('dragon.jpg')%>" alt="dragon" />
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
+  <!-- </div>
+  <div class="row"> -->
+    <div class="col-md-6  user-info">
+      <h3 class="heading-3"><%= @user.full_name %> </h3>
       <ul>
         <li>Email: <%= @user.email_address %></li>
         <li>Start Date: <%= @user.format_start_date %></li>
       </ul>
-      <button type="button"><%= link_to "Edit Info", edit_user_path(@user) %></button>
-      <%= button_to "Logout", logout_path, method: "delete" %>
+      <%= link_to "Edit Info", edit_user_path(@user), class: "btn" %>
     </div>
   </div>
   <br />
 
   <div class="row">
-    <div class="col-md-6">
-      <h4>Characters</h4>
+    <div class="col-md-6 user-info-2">
+      <h4 class="heading-4">Characters</h4>
     </div>
-    <div class="col-md-6">
-      <h4>Campaigns</h4>
+    <div class="col-md-6 user-info-2">
+      <h4 class="heading-4">Campaigns</h4>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 user-info-2">
       <ul>
         <% @user.characters.each do |character| %>
         <li><%= link_to character.char_name, character_path(Character.find(character.id)) %></li>
         <% end %>
       </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 user-info-2">
       <ul>
         <% @user.get_list_of_campaign_titles.each do |title| %>
         <li><%= title %></li>
@@ -42,8 +44,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <h4>Meetups</h4>
+    <div class="col-md-6 user-info-2">
+      <h4 class="heading-4">Meetups</h4>
       <ul>
         <% @user.meetups.each do |mu| %>
         <li><%= link_to mu.format_meet_time, meetup_path(mu) %> - <%= mu.campaign.title %></li>
