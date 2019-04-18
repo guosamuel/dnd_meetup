@@ -1,4 +1,4 @@
-<h3><%= @character.char_name %></h3>
+<h3 class="show-char-name"><%= @character.char_name %></h3>
 
 <ul>
   <li>Current campaign: <%= @character.campaign.title %></li>
@@ -9,4 +9,4 @@
   <li>Class: <%= @character.klass %></li>
 </ul>
 
-<button type="button" class="btn"><%= link_to "Edit", edit_character_path(@character) %></button>
+<button type="button" class="btn"><%= link_to "Edit", edit_character_path(@character), class: "edit-char-btn" %></button>

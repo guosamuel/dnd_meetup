@@ -17,32 +17,7 @@
       <div class="container">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">NY DND</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="<%= current_user ? user_path(current_user) : "#"%>">Profile <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%=meetups_path%>">Meetups</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%=campaigns_path%>">Campaigns</a>
-          </li>
-          <li class="nav-item">
-            <% if current_user %>
-            <%= link_to "Logout", logout_path, method: "delete", class: "nav-link" %>
-            <% else %>
-            <a class="nav-link" href="<%=login_path%>">Login</a>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+   <%= render "shared/navbar" %>
     </div>
     </header>
     <div class="container">

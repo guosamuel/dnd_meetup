@@ -1,3 +1,20 @@
 // Place all the styles related to the Characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.show-char-name {
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  color: rgba(104,22,18,1)
+}
+
+a {
+  color: rgba(51,51,51,1)
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgba(90,90,90,1)
+}

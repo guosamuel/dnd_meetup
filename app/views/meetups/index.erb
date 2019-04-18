@@ -23,9 +23,9 @@
 
             <p class="heading-p"><%= link_to meetup.location, meetup_path(meetup) %></p>
             <ul>
-              <li>Campaign: <%= meetup.campaign.title %></li>
-              <li>Meet Time: <%= meetup.format_meet_time %></li>
-              <li>Expected Duration <%= meetup.number_of_hours %> hours</li>
+              <li><%= meetup.campaign.title %></li>
+              <li><%= meetup.format_meet_time %></li>
+              <li><%= meetup.number_of_hours %> hours</li>
             </ul>
           </div>
         </div>

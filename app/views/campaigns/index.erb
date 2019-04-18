@@ -14,8 +14,8 @@
           <div class="campaign-card">
             <p class="heading-p"><%= link_to campaign.title, campaign_path(campaign) %></p>
             <ul>
-              <li>Title: <%= campaign.title %></li>
-              <li>Expected Number of Meetups: <%= campaign.expect_number_of_meetups %></li>
+              <li><%= campaign.title %></li>
+              <li><%= campaign.expect_number_of_meetups %> Meetups</li>
               <li>Difficulty: <%= campaign.difficulty %></li>
               <li>Max Number of Characters: <%= campaign.max_number_of_characters %></li>
             </ul>
