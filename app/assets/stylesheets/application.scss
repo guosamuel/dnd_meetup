@@ -33,10 +33,12 @@ body {
 
 .my-header {
   text-transform: uppercase;
-  border-bottom: 3px solid rgb(104,22,18);
-  margin-bottom: 30px;
+  margin-bottom: 86px;
 }
 
+nav {
+  border-bottom: 3px solid rgb(104,22,18);
+}
 .navbar-light .navbar-brand {
   color: rgb(104,22,18);
   font-family: 'Crimson Text', serif;
