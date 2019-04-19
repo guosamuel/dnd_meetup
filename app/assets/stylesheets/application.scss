@@ -98,15 +98,21 @@ body {
 }
 
 
-#login-img {
+.login-img {
   background-image: url(/assets/wallpaper2.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
-#img-screen {
+.img-screen {
   height:100vh;
   padding: 30px;
   // width: 100vw;
   background-color: rgba(230,230,230,0.8);
+}
+
+@media only screen and (max-width: 746px) {
+  .form-control {
+    width: 50%;
+  }
 }

@@ -1,19 +1,33 @@
-<h1 class="sign-up-heading">Sign Up</h1>
-<h4 class="notice"><%= flash[:notice] %></h4>
+<div class="login-img">
+  <div class="img-screen">
+    <div class="row">
+      <div class="col">
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <%= error %> &nbsp
-  <% end %>
-<% end %>
+        <h1 class="sign-up-heading">Sign Up</h1>
+        <h4 class="notice"><%= flash[:notice] %></h4>
 
-  <%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+            <%= error %> &nbsp
+          <% end %>
+        <% end %>
 
-    <%= f.text_field :user_name %>
+          <%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-    <%= f.text_field :password %>
-    <%= f.text_field :first_name%>
-    <%= f.text_field :last_name %>
-    <%= f.text_field :email_address%>
-    <%= f.submit %>
-  <% end %>
+            <%= f.text_field :user_name %>
+
+
+            <%= f.text_field :password %>
+
+            <%= f.text_field :first_name %>
+
+            <%= f.text_field :last_name %>
+
+            <%= f.text_field :email_address %>
+
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
