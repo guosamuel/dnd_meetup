@@ -4,8 +4,9 @@
       <div class="col-xs-6">
         <h1 class="login-heading">Login</h1>
 
-        <h4><%= flash[:notice] %></h4>
-
+        <% if flash[:notice] %>
+        <div class="alert alert-warning" role="alert"><%= flash[:notice] %></div>
+        <% end %>
         <%= form_tag(login_path) do %>
           <%= label_tag :user_name, nil, class: "log-label" %>
           <%= text_field_tag :user_name, nil, class: "input-group" %>

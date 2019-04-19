@@ -14,7 +14,13 @@
       <%= button_to "New Meetup", new_meetup_path, method: :get, class: "my-btn btn-secondary move-btn" %>
     </div>
   </div>
-  <h4 style="color: red;"><%=flash[:errors]%></h4>
+  <% if flash[:errors] %>
+  <div class="alert alert-danger">
+
+    <%= flash[:errors] %> &nbsp
+
+  </div>
+  <% end %>
     <div class="row">
         <% @meetups.each do |meetup| %>
         <div class="col-md-4">
