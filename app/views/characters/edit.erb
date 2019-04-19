@@ -1,9 +1,7 @@
-<h3>Edit <%= @character.char_name %></h3>
+<h3 class="show-char-name">Edit <%= @character.char_name %></h3>
 
-<%= form_for(@character) do |f| %>
-  <%= f.label :weapon, "Weapon" %>
+<%= bootstrap_form_for(@character) do |f| %>
   <%= f.text_field :weapon %>
-  <%= f.label :level, "Level" %>
   <%= f.number_field :level %>
   <%= f.submit %>
 <% end %>

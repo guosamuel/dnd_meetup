@@ -1,8 +1,7 @@
-<h1>Editing the Campaign</h1>
+<h1 class="heading-1">Campaign Status</h1>
 
-<%= form_for(@campaign) do |f| %>
-  <%= f.label :completed, "Completed?" %>
-  <%= f.select :completed, @complete_array %><br><br>
+<%= bootstrap_form_for(@campaign) do |f| %>
+  <%= f.select :completed, @complete_array, label: "Completed?" %><br><br>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Save" %>
 <% end %>

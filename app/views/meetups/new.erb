@@ -1,4 +1,4 @@
-<h1>New Meetup</h1>
+<h1 class="heading-1">New Meetup</h1>
 
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 
-<%= bootstrap_form_for(@meetup) do |f| %>
+<%= bootstrap_form_for(@meetup, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
   <% if flash[:campaign] %>
     <%= f.text_field :campaign_id, :readonly => true, value: flash[:campaign_title], label: "Campaign", class: "form-control"%>
     <%= f.hidden_field :campaign_id, value: flash[:campaign] %>

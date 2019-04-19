@@ -1,25 +1,22 @@
-<h1>Start A New Campaign</h1>
+<h1 class="heading-1">Start A New Campaign</h1>
 <p>Note: Since you are starting a new compaign, you shall be Dungeon Master by default.</p>
 
-<%= form_for(@campaign) do |f| %>
+<%= bootstrap_form_for(@campaign, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
   <%= f.hidden_field :completed, value: false %>
-  <div class="form-group">
-  <%= f.label :title, "Campaign Title: " %>
-  <%= f.text_field :title, class: "form-control"%>
-  </div>
-  <div class="form-group">
-  <%= f.label :expect_number_of_meetups, "Expected Number of Meetup: " %>
-  <%= f.number_field :expect_number_of_meetups, class: "form-control" %>
-  </div>
-  <div class="form-group">
-  <%= f.label :max_number_of_characters, "Max Number of Characters: " %>
-  <%= f.number_field :max_number_of_characters, class: "form-control"%>
-  </div>
-  <div class="form-group">
-  <%= f.label :difficulty, "Difficulty: " %>
-  <%= f.number_field :difficulty, class: "form-control"%>
-  </div>
-  <%= f.submit class: "btn btn-secondary" %>
+
+
+  <%= f.text_field :title%>
+
+
+  <%= f.number_field :expect_number_of_meetups, label: "Number of Meetups" %>
+
+
+  <%= f.number_field :max_number_of_characters, label: "Character Limit"%>
+
+
+  <%= f.number_field :difficulty%>
+
+  <%= f.submit%>
 <% end %>
 
 <% if flash[:errors] %>
