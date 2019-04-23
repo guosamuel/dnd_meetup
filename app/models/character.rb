@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
   belongs_to :campaign
+
   belongs_to :user
 
   validates :campaign_id, numericality: {greater_than_or_equal_to: 1}

@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  has_secure_password
+  # has_secure_password
   has_many :user_meetups
   has_many :meetups, through: :user_meetups, dependent: :destroy
+
   has_many :characters
 
   #not really on board?
@@ -11,7 +12,8 @@ class User < ApplicationRecord
   validates :user_name, presence: true
   validates :email_address, presence: true, if: :has_at_and_period?
   validates :user_name, uniqueness: { case_sensitive: false }
-
+  # WANTED TO TEST BUT SCREWED UP THE APP...??? ACCIDENTLY DESTROYED ALL CHARACTERS THEN COULDN'T RESET THE DATABASE
+  # validates :characters, uniqueness: { case_sensitive: false }
   validates :email_address, uniqueness: { case_sensitive: false }
   validate :has_at_and_period?
 
@@ -125,6 +127,12 @@ class User < ApplicationRecord
     # campaign_titles.uniq
     self.campaigns.map do |campaign|
       campaign.title
+    end
+  end
+
+  def campaigns
+    self.meetups.map do |meetup|
+      meetup.campaign
     end
   end
 
