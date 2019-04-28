@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   belongs_to :user
 
   validates :campaign_id, numericality: {greater_than_or_equal_to: 1}
+  validates :user_id, uniqueness:{ scope: :campaign_id, message: "only one character per campaign" } # <-- ADDED FOR BLOG
   validates :alignment, presence: true, unless: :dungeon_master?
   validates :char_name, presence: true
   validates :race, presence: true, unless: :dungeon_master?
