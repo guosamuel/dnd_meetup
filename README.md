@@ -5,7 +5,8 @@ Dungeons and Dragons is a role-playing game played in person, in groups of four 
 NY DND was created as a part of the immersive web development program at Flatiron School in 2019 by John Agens and Sam Guo. We saw a need for players to be able to both arrange meetups as well as keep track of relevant game information at the same time.
  
 ## Screenshots
-Include logo/demo screenshot etc.
+![image](https://user-images.githubusercontent.com/19267312/60039894-c6b3ce00-9685-11e9-8b83-d1dbe04c2477.png)
+
 
 ## Tech/framework used
 Ex. -
