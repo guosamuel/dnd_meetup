@@ -44,6 +44,6 @@ To setup the database run `$ rails db:setup`
 To migrate the schema run `$ rails db:migrate`
 
 ## Tests
-I wrote some model tests for the project in the **spec/models** directory on the <b>rspec-tests</b> branch. You should be able to run the tests with the `$ rspec` command. If they don't work try running `$ rails db:setup` and `$ rails db:migrate`. I the project was initially built using an SQLite3 database, but I had to reconfigure it to use Postgres in order to [depoly](https://safe-hollows-92302.herokuapp.com/login) the project to Heroku. So be aware there may be some configuration misalignments remaining if you choose to clone down this repo.
+I wrote some model tests for the project in the **spec/models** directory. You should be able to run the tests with the `$ rspec` command. If they don't work try running `$ rails db:setup` and `$ rails db:migrate`. I the project was initially built using an SQLite3 database, but I had to reconfigure it to use Postgres in order to [depoly](https://safe-hollows-92302.herokuapp.com/login) the project to Heroku. So be aware there may be some configuration misalignments remaining if you choose to clone down this repo.
 
 Here's a [blog post](https://medium.com/@johntagens/writing-model-tests-for-my-rails-app-f1380b0965c0) I made about my experience writing the tests.
