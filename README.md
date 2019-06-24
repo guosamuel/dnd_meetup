@@ -20,11 +20,16 @@ NY DND was created as a part of the immersive web development program at Flatiro
 
 ## Installation
 Clone down the responsitory in your terminal.
+
 `$ git clone <project url>`
 Navigate into the directory.
+
 `$ cd dnd_meetup/`
+
 Run `$ bundle install`
+
 To setup the database run `$ rails db:setup`
+
 To migrate the schema run `$ rails db:migrate`
 
 ## Tests
