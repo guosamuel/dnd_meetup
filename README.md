@@ -7,6 +7,7 @@ NY DND was created as a part of the immersive web development program at Flatiro
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/19267312/60039894-c6b3ce00-9685-11e9-8b83-d1dbe04c2477.png)
 
+![image](https://user-images.githubusercontent.com/19267312/60040044-1a261c00-9686-11e9-9379-86a610c58b1b.png)
 
 ## Tech/framework used
 Ex. -
