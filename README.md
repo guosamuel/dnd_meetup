@@ -22,6 +22,7 @@ NY DND was created as a part of the immersive web development program at Flatiro
 Clone down the responsitory in your terminal.
 
 `$ git clone <project url>`
+
 Navigate into the directory.
 
 `$ cd dnd_meetup/`
