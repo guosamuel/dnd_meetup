@@ -2,7 +2,7 @@
 Dungeons and Dragons is a role-playing game played in person, in groups of four to six players (although group sizes may vary). NY DND is a web app that allows users to create and RSVP for game meetups in the greater New York City area. When a users RSVP to a meetups they indicate which character they will play in the campaign. If a user creates a new campaign, he will be assigned the role of Dungeon Master for all associated meetups. All of a user's upcoming meetups and information about her corresponding characters are conviently displayed on the profile page. It should be noted that the application does not currently include any geolocation functionality and the choice to focus on the local area was made to keep the scope of the project small.
 
 ## Background
-NY DND was completed as a part of the immersive web development program at Flatiron School in 2019 by John Agens and Sam Guo. We saw a need for players to be able to both arrange meetups as well as keep track of relevant game information at the same time.
+NY DND was created as a part of the immersive web development program at Flatiron School in 2019 by John Agens and Sam Guo. We saw a need for players to be able to both arrange meetups as well as keep track of relevant game information at the same time.
  
 ## Screenshots
 Include logo/demo screenshot etc.
