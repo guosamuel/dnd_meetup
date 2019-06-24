@@ -10,19 +10,23 @@ NY DND was created as a part of the immersive web development program at Flatiro
 ![image](https://user-images.githubusercontent.com/19267312/60040044-1a261c00-9686-11e9-9379-86a610c58b1b.png)
 
 ## Tech/framework used
-Ex. -
 
 <b>Built with</b>
-- [Electron](https://electron.atom.io)
+- [Ruby on Rails](https://rubyonrails.org/)
 
-## Features
-What makes your project stand out?
-
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+## Important Features
+* Custom validations for models to ensure that the application would mirror the game’s rules.
+* Used Bootstrap 4 and custom CSS to make a mobile-responsive user interface.
 
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+Clone down the responsitory in your terminal.
+`$ git clone <project url>`
+Navigate into the directory.
+`$ cd dnd_meetup/`
+Run `$ bundle install`
+To setup the database run `$ rails db:setup`
+To migrate the schema run `$ rails db:migrate`
+
 
 ## API Reference
 
