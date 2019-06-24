@@ -7,11 +7,10 @@ NY DND was created as a part of the immersive web development program at Flatiro
 ## Demo
 Follow [this link](https://safe-hollows-92302.herokuapp.com/login)
 
-And log in with:
+And log in with:<br>
+<b>Username: guest</b>
 
-Username: guest
-
-Password: 123
+<b>Password: 123</b>
 
 or create your own account by clicking the **Sign Up** button on the home page.
 
