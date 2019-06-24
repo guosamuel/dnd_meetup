@@ -33,21 +33,6 @@ To migrate the schema run `$ rails db:migrate`
 Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
 
 ## Tests
-Describe and show how to run the tests with code examples.
+I wrote some model tests for the project in the *spec/models* directory on the <b>rspec-tests</b> branch. You should be able to run the tests with the `$ rspec` command. If they don't work try running `$ rails db:setup` and `$ rails db:migrate`. I the project was initially built using an SQLite3 database, but I had to reconfigure it to use Postgres in order to [depoly](https://safe-hollows-92302.herokuapp.com/login) the project to Heroku. So be aware there may be some configuration misalignments remaining if you choose to clone down this repo.
 
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
-
-## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
-
-#### Anything else that seems useful
-
-## License
-A short snippet describing the license (MIT, Apache etc)
-
-MIT © [Yourname]()
+Here's a [blog post](https://medium.com/@johntagens/writing-model-tests-for-my-rails-app-f1380b0965c0) I made about my experience writing the tests.
